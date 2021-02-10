@@ -188,7 +188,7 @@ It's natural to expect that bikes are rented more at some times of day, some day
 Trips %>% 
   ggplot(aes(sdate)) +
   geom_density() +
-  labs(title = "Distrobution of Bike Rentles From October to January", 
+  labs(title = "Distribution of Bike Rentles From October to January", 
        x = "", 
        y = "")
 ```
@@ -202,7 +202,7 @@ Trips %>%
          time_of_day = hour + minute) %>% 
   ggplot(aes(time_of_day)) +
     geom_density() +
-    labs(title  = "Distrobution of Bike Rentles Throughout the Day", 
+    labs(title  = "Distribution of Bike Rentles Throughout the Day", 
          x = "", 
          y = "")
 ```
@@ -215,7 +215,7 @@ Trips %>%
   ggplot(aes(day)) +
     geom_bar() + 
     coord_flip() +
-    labs(title = "Distrobution of Bike Rentals Throughout the Week", 
+    labs(title = "Distribution of Bike Rentals Throughout the Week", 
          x = "")
 ``` 
 
@@ -231,7 +231,7 @@ Trips %>%
   ggplot(aes(time_of_day)) +
     geom_density() +
     facet_wrap(~day) +
-    labs(title ="Distrobution of Bike Rentals Throughout the Day for Each Weekday", 
+    labs(title ="Distribution of Bike Rentals Throughout the Day for Each Weekday", 
          x = "", 
          y = "")
 ```
@@ -253,7 +253,7 @@ Trips %>%
                  alpha = .5, 
                  color = NA) +
     facet_wrap(~day) +
-  labs(title = "Distrobution of Registered and Casual Bike Rentles Throughout the Week",
+  labs(title = "Distribution of Registered and Casual Bike Rentles Throughout the Week",
        x = "Time of Day",
        y = "")
 ```
@@ -272,13 +272,13 @@ Trips %>%
                  alpha = .5, 
                  position = position_stack()) +
     facet_wrap(~day) +
-    labs(title = "Distrobution of Registered and Casual Bike Rentles Throughout the Week",
+    labs(title = "Distribution of Registered and Casual Bike Rentles Throughout the Week",
        x = "Time of Day",
        y = "")
 ```
-  
-The first graph tells a better story. 
-  
+
+I think it is easier to see the difference in weekday ridership in the first graph. It is harder to see the overall shape of casual riders in the second graph since the distributions are standardized to have a consistent height. The second graph, however, does show the general relationship also.
+
   13. In this graph, go back to using the regular density plot (without `position = position_stack()`). Add a new variable to the dataset called `weekend` which will be "weekend" if the day is Saturday or Sunday and  "weekday" otherwise (HINT: use the `ifelse()` function and the `wday()` function from `lubridate`). Then, update the graph from the previous problem by faceting on the new `weekend` variable. 
   
 ```{r}
@@ -293,7 +293,7 @@ Trips %>%
                  alpha = .5,
                  color = NA) +
     facet_wrap(~weekend) +
-    labs(title = "Distrobution of Riders",
+    labs(title = "Distribution of Riders",
          x = "time of day")
 ```
   
@@ -311,12 +311,12 @@ Trips %>%
                  alpha = .5,
                  color = NA) +
     facet_wrap(~client) +
-        labs(title = "Distrobution of Riders Based on Day",
+        labs(title = "Distribution of Riders Based on Day",
          x = "time of day")
 ```
   
 
-These graphs are basically showing the same relationship between clients and days of the week. In the first graph, I think it is slightly easier to see that registered riders are mainly riding the bikes to commute.   
+These graphs are basically showing the same relationship between clients and days of the week. In the first graph, I think it is slightly easier to see that registered riders are mainly riding the bikes to commute to work since I usually associate time being displayed on an axis rather then fill.   
   
 ### Spatial patterns
 
@@ -396,7 +396,7 @@ left_join(top_departures, top_depart_2) %>%
 ```
 
 
-
+Saturday has the highest percent of casual riders, but the highest percent of Regular riders is on Wednesday and Thursday with the lowest percents on the weekend.
 
 
 **DID YOU REMEMBER TO GO BACK AND CHANGE THIS SET OF EXERCISES TO THE LARGER DATASET? IF NOT, DO THAT NOW.**
@@ -404,6 +404,8 @@ left_join(top_departures, top_depart_2) %>%
 ## GitHub link
 
   20. Below, provide a link to your GitHub page with this set of Weekly Exercises. Specifically, if the name of the file is 03_exercises.Rmd, provide a link to the 03_exercises.md file, which is the one that will be most readable on GitHub.
+  
+https://github.com/emilylugthar/week3_assignment/blob/main/03_exercises%20(1).rmd
 
 ## Challenge problem! 
 
